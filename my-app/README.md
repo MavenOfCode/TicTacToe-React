@@ -42,3 +42,7 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+
+Based on Kent Dodd's article [Should I useState or useReducer](https://kentcdodds.com/blog/should-i-usestate-or-usereducer).
+[Forked version](https://codesandbox.io/s/react-tic-tac-toe-with-hooks-r67h8) of Dodd's CodeSandbox
