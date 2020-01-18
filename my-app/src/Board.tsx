@@ -28,9 +28,9 @@ function gameReducer(
       const squaresCopy = [...squares];
       if (square) {
         if (xIsNext) {
-          squaresCopy[square] === "X";
+          squaresCopy[square] = "X";
         } else {
-          squaresCopy[square] === "O";
+          squaresCopy[square] = "O";
         }
       }
       return {
