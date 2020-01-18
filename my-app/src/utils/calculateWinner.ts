@@ -1,5 +1,3 @@
-import { XIsNext } from "../Board";
-
 export function calculateWinner(squares: string[]) {
   const lines: number[][] = [
     [0, 1, 2],

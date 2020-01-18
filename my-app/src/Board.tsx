@@ -27,12 +27,11 @@ function gameReducer(
       }
       const squaresCopy = [...squares];
       if (square) {
-        if (xIsNext) {
-          squaresCopy[square] = "X";
-        } else {
-          squaresCopy[square] = "O";
-        }
+        squaresCopy[square] = xIsNext ? "X" : "O";
       }
+      console.log("SQUARES", squares);
+      console.log("Play values", xIsNext);
+
       return {
         squares: squaresCopy,
         xIsNext: !xIsNext
@@ -51,6 +50,7 @@ export default function Board() {
     squares: Array(9).fill(null),
     xIsNext: true
   });
+
   const { squares, xIsNext } = state;
 
   function renderSquare(index: number) {
