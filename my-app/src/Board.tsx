@@ -1,28 +1,41 @@
-import React from "react";
-import usePlayerStatus, { calculateWinner } from "./hooks/usePlayerStatus";
-import Square from "./Square";
-export type Squares = number[];
-export type XIsNext = string;
+import React, { useReducer } from "react";
+import { calculateWinner } from "./utils/calculateWinner";
 
+export type XIsNext = boolean;
+
+function getStatus(squares: string[], xIsNext: XIsNext) {
+  const winner = calculateWinner(squares);
+  if (winner) {
+    return `Winner is ${winner}`;
+  } else if (squares.every(Boolean)) {
+    return `It is a tie!`;
+  } else {
+    return `Next Player is ${xIsNext ? "X" : "O"}`;
+  }
+}
 function gameReducer(
-  state: { Squares: number[]; XIsNext: string },
-  action: { type?: string; Square?: number }
+  state: { squares: string[]; xIsNext: XIsNext },
+  action: { type: string; square: number }
 ) {
-  const { Squares, XIsNext } = state;
+  const { squares, xIsNext } = state;
   switch (action.type) {
     case "SELECT_SQUARE": {
-      const { Square } = action;
-      const winner = calculateWinner(Squares);
-      if (Square && (winner || Squares[Square])) {
+      const { square } = action;
+      const winner = calculateWinner(squares);
+      if (square && (winner || squares[square])) {
         return state;
       }
-      const SquaresCopy = [...Squares];
-      if (Square) {
-        SquaresCopy[Square] = XIsNext ? "X" : "O";
+      const squaresCopy = [...squares];
+      if (square) {
+        if (xIsNext) {
+          squaresCopy[square] === "X";
+        } else {
+          squaresCopy[square] === "O";
+        }
       }
       return {
-        Squares: SquaresCopy,
-        XIsNext: !XIsNext
+        squares: squaresCopy,
+        xIsNext: !xIsNext
       };
     }
     default: {
@@ -34,28 +47,42 @@ function gameReducer(
 }
 
 export default function Board() {
-  const [state, dispatch] = React.useReducer(gameReducer, {
+  const [state, dispatch] = useReducer(gameReducer, {
     squares: Array(9).fill(null),
-    XIsNext: true
+    xIsNext: true
   });
+  const { squares, xIsNext } = state;
+
+  function renderSquare(index: number) {
+    return (
+      <button className="square" onClick={() => selectSquare(index)}>
+        {squares[index]}
+      </button>
+    );
+  }
+  function selectSquare(square: any) {
+    dispatch({ type: "SELECT_SQUARE", square });
+  }
+
+  const status = getStatus(squares, xIsNext);
 
   return (
     <div>
       <div className="status">{status}</div>
       <div className="board-row">
-        {Square(0)}
-        {Square(1)}
-        {Square(2)}
+        {renderSquare(0)}
+        {renderSquare(1)}
+        {renderSquare(2)}
       </div>
       <div className="board-row">
-        {Square(3)}
-        {Square(4)}
-        {Square(5)}
+        {renderSquare(3)}
+        {renderSquare(4)}
+        {renderSquare(5)}
       </div>
       <div className="board-row">
-        {Square(6)}
-        {Square(7)}
-        {Square(8)}
+        {renderSquare(6)}
+        {renderSquare(7)}
+        {renderSquare(8)}
       </div>
     </div>
   );
