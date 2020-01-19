@@ -55,7 +55,11 @@ export default function Board() {
 
   function renderSquare(index: number) {
     return (
-      <button className="square" onClick={() => selectSquare(index)}>
+      <button
+        title="square"
+        className="square"
+        onClick={() => selectSquare(index)}
+      >
         {squares[index]}
       </button>
     );
@@ -68,7 +72,9 @@ export default function Board() {
 
   return (
     <div>
-      <div className="status">{status}</div>
+      <div title="status" className="status">
+        {status}
+      </div>
       <div className="board-row">
         {renderSquare(0)}
         {renderSquare(1)}
