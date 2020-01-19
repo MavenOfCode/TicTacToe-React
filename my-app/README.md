@@ -1,4 +1,11 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Tic Tac React
+
+This project is done to work with the `React` hook `useReducer`, practice writing tests and just play with code.
+
+See [Sources](#sources) for more on original code, code help, etc.
+See [Change Log](#change-log) to see timeline of growth of project
+See [Project Structure](#project-structure) for more on how project was structured, etc.
+See [Available Scripts](#available-scripts) for how to run application, tests, etc.
 
 ## Available Scripts
 
@@ -37,12 +44,22 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+## Project Structure
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
+## Sources
 
 Based on Kent Dodd's article [Should I useState or useReducer](https://kentcdodds.com/blog/should-i-usestate-or-usereducer).
 [Forked version](https://codesandbox.io/s/react-tic-tac-toe-with-hooks-r67h8) of Dodd's CodeSandbox
+
+Button positioning [spectrum.chat](https://spectrum.chat/react/general/how-to-remount-refresh-a-react-component~7119779f-245f-4c1b-bcdb-a01c00cdb1e6)
+
+## Change Log
+
+1/17/2020 - start project
+1/19/2020 - add basic tests - update images, add color, add restart button
