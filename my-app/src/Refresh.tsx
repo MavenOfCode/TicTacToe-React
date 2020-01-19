@@ -6,7 +6,11 @@ export default function Refresh() {
 
   return (
     <>
-      <button className="refresh" onClick={() => setGameKey(gameKey + 1)}>
+      <button
+        title="refresh"
+        className="refresh"
+        onClick={() => setGameKey(gameKey + 1)}
+      >
         Restart Game
       </button>
       <Board key={gameKey} />

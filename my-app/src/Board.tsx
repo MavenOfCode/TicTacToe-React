@@ -1,4 +1,4 @@
-import React, { useReducer, useEffect } from "react";
+import React, { useReducer } from "react";
 import { calculateWinner } from "./utils/calculateWinner";
 
 export type XIsNext = boolean;
@@ -22,21 +22,13 @@ function gameReducer(
   switch (action.type) {
     case "SELECT_SQUARE": {
       const { square } = action;
-      console.log("1 select square square action is", square);
       const winner = calculateWinner(squares);
-      console.log("2 select square winner is", winner);
       if (square && (winner || squares[square])) {
         return state;
       }
       const squaresCopy = [...squares];
-      console.log("3 select square squares copy is", squaresCopy);
       if (square >= 0) {
-        console.log("4 select square square value is", square);
         squaresCopy[square] = xIsNext ? "X" : "O";
-        console.log(
-          "5 select squaresCopy at square value is",
-          squaresCopy[square]
-        );
       }
 
       return {
@@ -59,10 +51,6 @@ export default function Board() {
   });
 
   const { squares, xIsNext } = state;
-  useEffect(() => {
-    console.log("Play values", xIsNext);
-    console.log("SQUARES", squares);
-  }, [squares, xIsNext]);
 
   function renderSquare(index: number) {
     return (
@@ -77,13 +65,12 @@ export default function Board() {
   }
   function selectSquare(square: any) {
     dispatch({ type: "SELECT_SQUARE", square });
-    console.log("select square and square is", square);
   }
 
   const status = getStatus(squares, xIsNext);
 
   return (
-    <div>
+    <div title="board">
       <div title="status" className="status">
         {status}
       </div>
