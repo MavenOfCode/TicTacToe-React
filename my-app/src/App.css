@@ -14,8 +14,8 @@
 
 .refresh {
   background-color: #3d7ab8;
-  align-items: center;
-  justify-content: center;
+  align-items: left;
+  justify-content: left;
   font-size: 1rem;
   color: white;
   position: absolute;
@@ -28,6 +28,17 @@
   font: 14px "Century Gothic", Futura, sans-serif;
   margin: 20px;
   min-height: 20rem;
+}
+.refresh #state {
+  justify-content: right;
+  align-items: right;
+  position: fixed;
+}
+
+.status {
+  justify-content: center;
+  padding-left: -10px;
+  margin-bottom: 10px;
 }
 
 .game ol,
@@ -42,7 +53,6 @@
 }
 
 .status {
-  margin-bottom: 10px;
 }
 
 .square {

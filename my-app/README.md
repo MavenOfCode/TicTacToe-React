@@ -1,6 +1,6 @@
 # Tic Tac React
 
-This project is done to work with the `React` hook `useReducer`, practice writing tests and just play with code.
+This project is done to work with the `React` hook `useReducer`, increase comfort using `Typescript` with `React`, practice writing tests and just play with code.
 
 See [Sources](#sources) for more on original code, code help, etc.
 See [Change Log](#change-log) to see timeline of growth of project
@@ -58,6 +58,12 @@ Based on Kent Dodd's article [Should I useState or useReducer](https://kentcdodd
 [Forked version](https://codesandbox.io/s/react-tic-tac-toe-with-hooks-r67h8) of Dodd's CodeSandbox
 
 Button positioning [spectrum.chat](https://spectrum.chat/react/general/how-to-remount-refresh-a-react-component~7119779f-245f-4c1b-bcdb-a01c00cdb1e6)
+
+## Additional React Hooks Tic Tac Toe Tutorials
+
+From Shif Ben Avraham: [How to Build Tic Tac Toe with React Hooks](https://medium.com/@shifrb/how-to-build-tic-tac-toe-with-react-hooks-ca37f6040022)
+
+From Tom Bowden: [Tutorial: Intro to React (with Hooks!)](https://medium.com/@tombowden_8885/tutorial-intro-to-react-with-hooks-89b331f54b50)
 
 ## Change Log
 

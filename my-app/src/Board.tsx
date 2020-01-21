@@ -13,6 +13,7 @@ function getStatus(squares: string[], xIsNext: XIsNext) {
     return `Next Player is ${xIsNext ? "X" : "O"}`;
   }
 }
+
 function gameReducer(
   state: { squares: string[]; xIsNext: XIsNext },
   action: { type: string; square: number }
@@ -89,6 +90,9 @@ export default function Board() {
         {renderSquare(7)}
         {renderSquare(8)}
       </div>
+      <p>
+        <i>With useReducer</i>
+      </p>
     </div>
   );
 }
