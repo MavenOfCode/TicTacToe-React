@@ -3,7 +3,7 @@ import { calculateWinner } from "./utils/calculateWinner";
 
 export default function BoardWithState() {
   const [squares, setSquares] = useState<string[]>(Array(9).fill(null));
-  const [status, setStatus] = useState();
+  const [status, setStatus] = useState<string>();
   const [nextPlayer, setNextPlayer] = useState(true);
   const [player, setPlayer] = useState("X");
 

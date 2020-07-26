@@ -69,3 +69,7 @@ From Tom Bowden: [Tutorial: Intro to React (with Hooks!)](https://medium.com/@to
 
 1/17/2020 - start project
 1/19/2020 - add basic tests - update images, add color, add restart button
+7/26/2020 - 
+  * revisiting project for initial review and future planning
+  * updating packages
+  * functionality needs lots of work - winner not declared player status lags, etc. 
